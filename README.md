@@ -45,6 +45,25 @@ export X_ACCESS_TOKEN="..."
 export X_ACCESS_TOKEN_SECRET="..."
 ```
 
+## Optional Hermes Agent Backend
+
+Hermes Agent users can keep `xpost` for direct OAuth-backed API v2 workflows and
+install [Hermes Tweet](https://github.com/Xquik-dev/hermes-tweet) as a separate
+Hermes plugin when they want the same X/Twitter work inside the Hermes tool
+runtime.
+
+```bash
+hermes plugins install Xquik-dev/hermes-tweet --enable
+export XQUIK_API_KEY="xq_..."
+export HERMES_TWEET_ENABLE_ACTIONS="false"
+```
+
+Use `tweet_explore` first to inspect available operations. Use `tweet_read` for
+searches, profiles, tweet/thread reads, bookmarks, trends, monitors, webhooks,
+and media lookups. Keep `HERMES_TWEET_ENABLE_ACTIONS=false` for read-only
+sessions, and set it to `true` only when a Hermes session should post, reply,
+DM, follow, manage monitors, or mutate media.
+
 ## Commands
 
 ```bash
